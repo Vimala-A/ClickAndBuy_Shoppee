@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-3 mb-4" *ngFor="let product of products$ | async">
+            <app-product [product]="product" (deleteProduct)="deleteProduct($event)"></app-product>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,59 @@
+<!-- <div class="d-flex flex-row justify-content-center product-detail">
+    <div class="order-1 p-2">
+        <img src="{{product?.image}}" class="card-img-top" alt="product-img">
+    </div>
+    <div class="order-2 p-2">
+       
+    </div>
+</div> -->
+
+
+<div class="row product-detail" *ngIf="product?.id">
+    <div class="col">
+        <img src="{{product?.image}}" class="card-img-top" alt="product-img">
+    </div>
+    <div class="col">
+        <div class="card cursor-pointer">
+            <div class="card-body">
+                <h4 class="card-title">{{product?.title}}</h4>
+                <p class="card-text my-4">{{product?.description}}</p>
+                
+                <div class="row hight-lights">
+                    <div class="col ">
+                        <p>Category:</p><span>{{product?.category | titlecase}}</span>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col hight-lights">
+                        <p>Rating:</p><span>{{product?.rating?.rate}}/ 5  - {{product?.rating?.count}} ratings</span>
+                    </div>
+                </div>
+
+                <div class="row my-4">
+                    <div class="col">
+                        <p class="price">{{product?.price | currency:'INR'}}</p>
+                    </div>
+                     <div class="col align-item-right hight-lights"> 
+                         <!-- <p>Quantity: {{product?.quantity}}</p> -->
+                         <p>Quantity: </p><span>{{product?.quantity}}</span>
+                    </div>
+                </div>
+            </div>
+
+    
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-1 mx-2">
+                        <i class="fa fa-plus inc-dec-icons"  (click)="incQuantity()" ></i>
+                    </div>
+                    <div class="col-1 mx-2">
+                        <i class="fa fa-minus inc-dec-icons" (click)="decQuantity()" ></i>
+                    </div>
+                    <div class="col cart-cta">
+                        <a class="btn btn-primary text-right theme-btn-bg-color" (click)="addToCart(product)">Add to cart</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

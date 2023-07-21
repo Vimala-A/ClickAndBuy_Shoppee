@@ -1,0 +1,23 @@
+
+@import '../../../styles/global-vars/colors.scss';
+
+.login-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../assets/images/bg.webp);
+    .login-form {
+        background-color: rgb(0 0 0 / 30%);
+        width:350px;
+        color:$white-color;
+        h2 {
+            color: $black-color;;
+        }
+        .error-text {
+            color: $alert-color;
+          
+        }
+    }
+}

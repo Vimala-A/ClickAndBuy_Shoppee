@@ -1,0 +1,8 @@
+@import '../../../styles/global-vars/colors.scss';
+
+.page-footer {
+    background:$linear-gradient;
+    .footer-copyright {
+        color:$white-color;
+    }
+}

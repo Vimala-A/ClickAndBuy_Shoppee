@@ -1,0 +1,39 @@
+@import '../../../styles/global-vars/colors.scss';
+
+
+
+.table {
+    th {
+        background: $theme-light-color;
+    }
+    .inc-dec-icons {
+        .btn {
+            margin-right: 4px;;
+
+        }
+    }
+}
+.cart {
+    margin: 10%;
+    .price-label {
+        text-align: right;
+        margin-right: 10px;
+    }
+    .clear-cart {
+        text-align: right;
+    }
+    .add-more {
+        margin-right: 8px;
+    }
+}
+.empty-cart {
+    background-color: $theme-color;
+    color: $white-color;
+    a {
+        // background-color: $white-color;
+        color: $white-color;
+        &:hover {
+            color: $black-color;
+        }
+    }
+}

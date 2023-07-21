@@ -1,0 +1,30 @@
+
+@import '../../../../styles/global-vars/colors.scss';
+.product-img {
+    width: auto;
+    height: 30%;
+}
+.product-detail {
+    width: 900px;
+    margin: 10% auto;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+    .card {
+        min-height: 550px;
+        margin: 20px 10px;
+    }
+    .hight-lights {
+        p {
+            font-weight: bold;
+            float: left;
+        }
+    }
+    .price {
+        font-weight: bold;
+        color: $blue-color
+    }
+    .cart-cta {
+        text-align: right;
+    }
+}

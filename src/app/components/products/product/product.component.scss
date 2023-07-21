@@ -1,0 +1,48 @@
+@import '../../../../styles/global-vars/colors.scss';
+
+.card {
+    .card-header {
+        background-color: $white-color;
+        img {
+            width: 200px;
+            height: 200px;
+            transition: 0.5s ease-in-out;
+            margin-bottom: 15px;;
+            &:hover {
+                transition: 0.5s ease-in-out;
+                transform: scale(1,1);
+            }
+        }
+    }
+
+    .card-text, .card-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 2500px;
+    white-space: nowrap;
+    }
+    .price {
+        font-weight: bold;
+    }
+    
+    .align-item-right {
+        text-align: right;
+    }
+    .quantity {
+        font-weight: bold;
+    }
+
+   
+    .card-footer {
+        .btn-primary {
+            width: 100%;
+            &:hover {
+                background-color: $btn-hover-color;
+            }
+        }
+    }
+    .rating {
+        font-size: 12px;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,35 @@
+
+@import '../../../styles/global-vars/colors.scss';
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $white-color;
+    background:$linear-gradient;
+    a {
+        color: $white-color;
+        &:hover {
+            color:$btn-hover-color;
+        }
+    }
+    .nav {
+        order: -1;
+      }
+
+    .site-header__wrapper{
+        display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    }
+    // .logout-sec {
+    //     cursor: pointer;
+    // }
+    .cursor {
+        cursor: pointer;
+    };
+    
+    
+  } 
+  

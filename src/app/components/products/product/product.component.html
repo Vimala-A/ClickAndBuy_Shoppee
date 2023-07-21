@@ -1,0 +1,63 @@
+
+<div class="card cursor-pointer" style="width: 18rem;" (click)="viewDetails()" >
+    <div class="card-header">
+        <img src="{{getSrc()}}" class="card-img-top" alt="product-img">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{product?.title}}</h5>
+      <p class="card-text">{{product?.description}}</p>
+      <div class="row">
+        <div class="col"> 
+            <p class="price">{{product?.price | currency:'INR'}}</p>
+        </div>
+        <div class="col"> 
+          <p appRatingHighlighter [ratingCount]="product?.rating?.rate" class="rating">{{product?.rating?.rate| ratingTextConverter}}</p>
+      </div>
+      </div>
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col-1 mx-2" *ngIf="isAdmin">
+                <a [routerLink]="'/products/add'"><i class="fa fa-plus inc-dec-icons"></i></a>
+            </div>
+            <div class="col-1 mx-2" *ngIf="isAdmin">
+                <a [routerLink]="'/products/edit/'+product?.id"><i class="fa fa-edit inc-dec-icons" ></i></a>
+            </div>
+            <div class="col-1 mx-2" *ngIf="isAdmin" (click)="openDeleteAlert($event)">
+                <a (click)="openDeleteAlert($event)"><i class="fa fa-trash inc-dec-icons" style="color:#0d6efd"></i>
+                </a>
+            </div>
+            <div class="col cart-cta">
+                <a class="btn btn-primary theme-btn-bg-color" (click)="viewDetails()">View Details</a>
+            </div>
+        </div>
+
+    </div> 
+  </div>
+ 
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Are you sure, you want to delete?</h4>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 15px;">{{product?.title}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" 
+                (click)="closePopup()">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-primary" 
+                (click)="confirmDelete()">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

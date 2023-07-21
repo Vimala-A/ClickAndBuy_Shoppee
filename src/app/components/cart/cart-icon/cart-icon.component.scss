@@ -1,0 +1,26 @@
+@import '../../../../styles/global-vars/colors.scss';
+
+div {
+    display: inline-block;
+    position: relative;
+    padding: 0px 7px;
+    font-size: large;
+    cursor: pointer;
+}
+span {
+    &.circle-number {
+        position: absolute;
+        background-color: $white-color;
+        border: 1px dotted $white-color;
+        border-radius: 50%;
+        color: $black-color;
+        display: inline-block;
+        text-align: center;
+        height: 15px;
+        width: 15px;
+        left: 25px;
+        bottom: 10px;
+        font-size: 10px;
+        line-height: 13px;
+    }
+}

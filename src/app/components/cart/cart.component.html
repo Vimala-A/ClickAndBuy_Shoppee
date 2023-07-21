@@ -1,0 +1,68 @@
+
+<ng-container *ngIf="activeCartItems?.length ===0 ; else cartInfo">
+    <div class="row cart">
+        <div class="col">
+            <div class="card text-center empty-cart" style="width: 500px; margin: 0 auto;">
+                <div class="card-body">
+                    <h5>Your Cart is Empty </h5>
+                    <a class="theme-btn-bg-color" [routerLink]="'/products'">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</ng-container>
+
+<ng-template #cartInfo>
+    <div class="cart"> 
+        <div class="row price-label">
+            <h5> Total Price: {{totalCost | currency:'INR'}}</h5>
+            <p>({{totalQuantity}} Items)</p>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Product Image</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Item Total Price</th>
+                            <th>Inc/ Dec Quantity</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of activeCartItems; let i = index">
+                            <td>{{i+1}}</td>
+                            <td><img src="{{item?.image}}" width="50" height="50"/></td>
+                            <td>{{item?.title}}</td>
+                            <td>{{item?.price}}</td>
+                            <td>{{item?.quantity}} 
+                
+                            </td>
+                            <td>{{item?.total}}</td>
+                            <td class="inc-dec-icons">
+                                <i class="btn btn-primary fa fa-plus" (click)="incQuantity(item)"> </i>
+                                <i class="btn btn-secondary fa fa-minus" (click)="decQuantity(item)"> </i>
+                            </td>
+                            <td><i class="btn btn-primary fa fa-trash" (click)="removeItem(item)"> </i></td>
+                
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row price-label clear-cart">
+            <div class="col-12">
+                <a class="btn btn-primary theme-btn-bg-color add-more" [routerLink]="'/products'">Add more Items</a>
+
+                <a class="btn btn-primary theme-btn-bg-color" (click)="clearCart()">Clear Cart</a>
+            </div>
+        </div>
+    </div>
+    
+    
+</ng-template>
